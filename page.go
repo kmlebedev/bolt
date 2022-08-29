@@ -7,8 +7,6 @@ import (
 	"unsafe"
 )
 
-const pageHeaderSize = int(unsafe.Sizeof(page{}))
-
 const minKeysPerPage = 2
 
 const branchPageElementSize = int(unsafe.Sizeof(branchPageElement{}))
@@ -24,6 +22,8 @@ const (
 const (
 	bucketLeafFlag = 0x01
 )
+
+var pageHeaderSize = int(unsafe.Sizeof(page{}))
 
 type pgid uint64
 
