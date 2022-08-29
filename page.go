@@ -7,7 +7,7 @@ import (
 	"unsafe"
 )
 
-const pageHeaderSize = int(unsafe.Offsetof(((*page)(nil)).ptr))
+const pageHeaderSize = int(unsafe.Sizeof(page{}))
 
 const minKeysPerPage = 2
 
